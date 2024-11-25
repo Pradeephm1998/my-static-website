@@ -7,6 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    animation: fadeBackground 8s infinite; /* Background color fade animation */
 }
 
 header {
@@ -15,13 +16,13 @@ header {
     text-align: center;
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 2s ease-in-out;
+    animation: bounceIn 2s ease-in-out;
 }
 
 header .logo img {
     height: 50px;
     width: auto;
-    animation: logoAnimation 2s ease-in-out;
+    animation: pulse 2s infinite; /* Pulse effect for logo */
 }
 
 nav ul {
@@ -34,6 +35,7 @@ nav ul {
 nav ul li {
     display: inline;
     margin-right: 15px;
+    animation: slideInFromLeft 1.5s ease-out;
 }
 
 nav ul li a {
@@ -44,15 +46,16 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #333;
+    color: #ff5722;
+    animation: shake 0.5s ease-in-out; /* Shake effect on hover */
 }
 
 /* Main Section Styling */
 .main, .about, .courses, .contact {
     padding: 20px;
-    text-align: left; /* Align text to the left */
+    text-align: left;
     margin-top: 20px;
-    animation: fadeInSection 1s ease-in-out;
+    animation: fadeInSection 1.5s ease-in-out;
     flex: 1;
 }
 
@@ -60,17 +63,22 @@ h1 {
     color: #333;
     font-size: 28px;
     margin-bottom: 20px;
-    animation: slideUp 1s ease-in-out;
-    text-align: left; /* Align heading to the left */
+    animation: slideUp 1.5s ease-in-out;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    animation: fadeInParagraph 2s ease-in;
 }
 
 /* Footer Styling */
 footer {
     background-color: #000000;
     padding: 10px;
-    text-align: left; /* Align footer text to the left */
+    text-align: left;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 3s ease-in-out;
+    animation: slideUpFooter 2s ease-in-out;
     margin-top: auto;
 }
 
@@ -79,55 +87,72 @@ footer p {
     font-size: 14px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        padding: 10px;
+/* Animations */
+@keyframes fadeBackground {
+    0% {
+        background-color: #f4f4f4;
     }
-
-    nav ul li {
-        display: block;
-        margin-right: 0;
-        margin-bottom: 10px;
+    50% {
+        background-color: #e0e0e0;
     }
-
-    .main, .about, .courses, .contact {
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 24px;
+    100% {
+        background-color: #f4f4f4;
     }
 }
 
-/* Animations */
-@keyframes fadeIn {
+@keyframes bounceIn {
     0% {
+        transform: scale(0.8);
         opacity: 0;
     }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
     100% {
+        transform: scale(1);
         opacity: 1;
     }
 }
 
-@keyframes logoAnimation {
-    0% {
-        transform: scale(0);
-    }
-    100% {
+@keyframes pulse {
+    0%, 100% {
         transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
     }
 }
 
 @keyframes fadeInLinks {
     0% {
         opacity: 0;
-    }
-    50% {
-        opacity: 0.5;
+        transform: translateY(-20px);
     }
     100% {
         opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
     }
 }
 
@@ -150,5 +175,44 @@ footer p {
     100% {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@keyframes fadeInParagraph {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUpFooter {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .main, .about, .courses, .contact {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
     }
 }
