@@ -4,21 +4,31 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the footer stays at the bottom */
 }
 
 header {
-    background-color: #4CAF50;
-    padding: 10px;
+    background-color: #000000;
+    padding: 15px;
     text-align: center;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
 }
 
 header .logo img {
     height: 50px;
+    width: auto;
+    animation: logoAnimation 2s ease-in-out;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    text-align: center;
+    animation: fadeInLinks 2s ease-in-out;
 }
 
 nav ul li {
@@ -29,21 +39,115 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
 }
 
-footer {
-    background-color: #4CAF50;
-    padding: 10px;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+nav ul li a:hover {
+    color: #333;
 }
 
+/* Main Section Styling */
 .main, .about, .courses, .contact {
     padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeInSection 1s ease-in-out;
+    flex: 1; /* Allows the content to stretch dynamically */
 }
 
 h1 {
     color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+    animation: slideUp 1s ease-in-out;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #000000;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 3s ease-in-out;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+footer p {
+    color: white;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .main, .about, .courses, .contact {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes logoAnimation {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInLinks {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInSection {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
