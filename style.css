@@ -6,7 +6,7 @@ body {
     background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures the footer stays at the bottom */
+    min-height: 100vh;
 }
 
 header {
@@ -50,10 +50,10 @@ nav ul li a:hover {
 /* Main Section Styling */
 .main, .about, .courses, .contact {
     padding: 20px;
-    text-align: center;
+    text-align: left; /* Align text to the left */
     margin-top: 20px;
     animation: fadeInSection 1s ease-in-out;
-    flex: 1; /* Allows the content to stretch dynamically */
+    flex: 1;
 }
 
 h1 {
@@ -61,16 +61,17 @@ h1 {
     font-size: 28px;
     margin-bottom: 20px;
     animation: slideUp 1s ease-in-out;
+    text-align: left; /* Align heading to the left */
 }
 
 /* Footer Styling */
 footer {
     background-color: #000000;
     padding: 10px;
-    text-align: center;
+    text-align: left; /* Align footer text to the left */
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     animation: fadeIn 3s ease-in-out;
-    margin-top: auto; /* Pushes the footer to the bottom */
+    margin-top: auto;
 }
 
 footer p {
