@@ -1,17 +1,23 @@
 /* General Styling */
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    background-image: url('assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     animation: fadeBackground 8s infinite;
 }
 
+/* Header Styling */
 header {
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.7); /* Medium transparent black */
     padding: 15px;
     text-align: center;
     color: white;
@@ -204,4 +210,28 @@ footer p {
     100% {
         transform: translateY(0);
     }
+}
+/* Header Styling */
+header {
+    background-color: rgba(169, 169, 169, 0.7); /* Medium transparent gray */
+    padding: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: bounceIn 2s ease-in-out;
+}
+
+/* Footer Styling */
+footer {
+    background-color: rgba(169, 169, 169, 0.7); /* Medium transparent gray */
+    padding: 10px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideUpFooter 2s ease-in-out;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 14px;
 }
