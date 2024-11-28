@@ -251,19 +251,20 @@ nav ul li a:hover {
 }
 
 /* Animations for Text */
+/* Animations for Text */
 .animated-text {
     animation: textFadeIn 3s ease-in-out;
-}
-
-@keyframes textFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    font-size: 1.5vw; /* Adjusts the size to scale with the viewport */
+    width: 100%; /* Makes the text span the entire width */
+    text-align: center; /* Centers the text horizontally */
+    margin: 0 auto; /* Ensures it stays centered */
+    display: flex; /* Ensures vertical alignment */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 15vh; /* Fills the page vertically */
+    box-sizing: border-box; /* Includes padding in the width/height calculation */
+    color: white; /* Text color */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); /* Adds depth */
 }
 
 /* Floating Register Button */
@@ -286,6 +287,18 @@ nav ul li a:hover {
 .floating-register-button:hover {
     background-color: #0056b3;
     transform: scale(1.1);
+}
+
+/* Keyframes for Text Fade-in Animation */
+@keyframes textFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Footer Styling */
