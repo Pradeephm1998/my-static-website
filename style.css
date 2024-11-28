@@ -251,6 +251,7 @@ nav ul li a:hover {
 }
 
 /* Animations for Text */
+/* Animations for Text */
 .animated-text {
     animation: textFadeIn 3s ease-in-out;
     font-size: 1.5vw; /* Adjusts the size to scale with the viewport */
@@ -288,8 +289,51 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
+
+=======
+
 /* Keyframes for Text Fade-in Animation */
 @keyframes textFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Styling */
+footer {
+    background-color: #000000;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideUpFooter 2s ease-in-out;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Additional Animations */
+@keyframes fadeBackground {
+    0% {
+        background-color: #f4f4f4;
+    }
+    50% {
+        background-color: #e0e0e0;
+    }
+    100% {
+        background-color: #f4f4f4;
+    }
+}
+
+@keyframes bounceIn {
+
     0% {
         opacity: 0;
         transform: translateY(20px);
