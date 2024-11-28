@@ -253,17 +253,17 @@ nav ul li a:hover {
 /* Animations for Text */
 .animated-text {
     animation: textFadeIn 3s ease-in-out;
-}
-
-@keyframes textFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    font-size: 1.5vw; /* Adjusts the size to scale with the viewport */
+    width: 100%; /* Makes the text span the entire width */
+    text-align: center; /* Centers the text horizontally */
+    margin: 0 auto; /* Ensures it stays centered */
+    display: flex; /* Ensures vertical alignment */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 15vh; /* Fills the page vertically */
+    box-sizing: border-box; /* Includes padding in the width/height calculation */
+    color: white; /* Text color */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); /* Adds depth */
 }
 
 /* Floating Register Button */
@@ -288,63 +288,14 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-/* Footer Styling */
-footer {
-    background-color: #000000;
-    padding: 10px;
-    text-align: center;
-    color: white;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-    animation: slideUpFooter 2s ease-in-out;
-    margin-top: auto;
-}
-
-footer p {
-    font-size: 14px;
-}
-
-/* Additional Animations */
-@keyframes fadeBackground {
+/* Keyframes for Text Fade-in Animation */
+@keyframes textFadeIn {
     0% {
-        background-color: #f4f4f4;
-    }
-    50% {
-        background-color: #e0e0e0;
-    }
-    100% {
-        background-color: #f4f4f4;
-    }
-}
-
-@keyframes bounceIn {
-    0% {
-        transform: scale(0.8);
         opacity: 0;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.5;
+        transform: translateY(20px);
     }
     100% {
-        transform: scale(1);
         opacity: 1;
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-}
-
-@keyframes slideUpFooter {
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
         transform: translateY(0);
     }
 }
